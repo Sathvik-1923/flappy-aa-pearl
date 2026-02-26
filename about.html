@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · Flappy AA Pearl</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #b3e5fc 0%, #81d4fa 40%, #4fc3f7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            line-height: 1.6;
+            color: #1e2b37;
+        }
+
+        /* main card */
+        .about-card {
+            max-width: 750px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 42px 42px 42px 42px;
+            box-shadow: 0 25px 40px -10px rgba(0, 50, 70, 0.3),
+                        0 0 0 2px rgba(255, 255, 255, 0.6) inset;
+            padding: 2.5rem 2.8rem;
+            transition: transform 0.2s ease;
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+
+        .about-card:hover {
+            transform: scale(1.01);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0d3b4f, #1b5e7a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            border-bottom: 4px solid #f9d56e;
+            padding-bottom: 6px;
+        }
+
+        .sub {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #1f4a5f;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sub span {
+            background: #f9d56e;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1b3b4b;
+            letter-spacing: 0.3px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            color: #083b4c;
+            border-left: 6px solid #f9d56e;
+            padding-left: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 1.2rem 0;
+            color: #173e4f;
+            background: rgba(255,255,240,0.3);
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px 20px 20px 60px;
+            backdrop-filter: blur(2px);
+        }
+
+        p strong {
+            color: #022f3f;
+            font-weight: 700;
+            background: #f9d56e;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-left: 0.4rem;
+            white-space: nowrap;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f9d56e, #8fd0e8, transparent);
+            margin: 2.5rem 0 1.5rem 0;
+            opacity: 0.6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.8rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: #083b4c;
+            text-decoration: none;
+            background: rgba(255, 255, 240, 0.9);
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 6px 12px rgba(0, 30, 40, 0.1);
+            transition: all 0.2s;
+            border: 1px solid white;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-links a:hover {
+            background: #f9d56e;
+            color: #02161e;
+            box-shadow: 0 10px 18px rgba(249, 213, 110, 0.4);
+            transform: translateY(-3px);
+            border-color: #f9d56e;
+        }
+
+        /* little bird decoration */
+        .bird-deco {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: #f9d56e;
+            border-radius: 50% 50% 40% 40%;
+            position: relative;
+            margin-right: 10px;
+            box-shadow: 0 4px 0 #b47d2e;
+        }
+        .bird-deco::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 50%;
+            top: 10px;
+            right: 8px;
+            box-shadow: -2px 0 0 white inset;
+        }
+        .bird-deco::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 12px;
+            background: #f9b32e;
+            left: -8px;
+            top: 12px;
+            border-radius: 40% 0 0 40%;
+            transform: rotate(5deg);
+        }
+
+        @media (max-width: 550px) {
+            .about-card {
+                padding: 1.8rem 1.5rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+            .nav-links a {
+                padding: 0.6rem 1.3rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="about-card">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <div class="bird-deco"></div>
+            <h1>Flappy AA Pearl</h1>
+        </div>
+        <div class="sub">
+            <span>✦ skill game ✦</span> 
+            <span style="background: #bee0f0;">since 2025</span>
+        </div>
+
+        <p><strong>Welcome!</strong> Flappy AA Pearl is a lightweight, reflex‑sharpening arcade game. Tap, fly, and beat your high score — no distractions, just pure fun.</p>
+
+        <h3>🎯 How to play</h3>
+        <p>Tap / click anywhere to make the bird flap. Dodge the pipes, stay alive, and earn points. It’s simple, but mastering it takes practice.</p>
+
+        <h3>📬 Contact</h3>
+        <p>Got feedback? Questions? We’d love to hear from you:  
+            <strong style="background: #f9d56e; padding: 0.3rem 1rem; border-radius: 40px; display: inline-block; margin-top: 6px;">flappyaa@gmail.com</strong>
+        </p>
+
+        <hr>
+
+        <div class="nav-links">
+            <a href="/">← Back to Game</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+
+        <!-- tiny footer whisper -->
+        <div style="text-align: center; margin-top: 2rem; opacity: 0.5; font-size: 0.9rem; color: #1a4f61;">fly high · stay pearl</div>
+    </div>
+</body>
+</html>
